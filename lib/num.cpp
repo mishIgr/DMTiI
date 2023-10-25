@@ -83,10 +83,10 @@ Num Num::operator+(const Num& other) const {
         next_discharge = (tmp_sum - sum_num.num[i]) / 100;
     }
 
-    if (next_discharge) {
-        sum_num.num[sum_num.size++] = (next_discharge > 0 ? 1 : -1) * next_discharge;
-        sum_num.is_negative = (next_discharge > 0 ? false : true);
-    }
+    sum_num.is_negative = (this->size < other.size ? other.is_negative : false) | (this->size > other.size ? this->is_negative : false);
+
+    if (next_discharge)
+        sum_num.num[sum_num.size++] = abs(next_discharge);
 
     while (sum_num.num[sum_num.size - 1] == 0 && sum_num.size > 1)
         sum_num.size--;
