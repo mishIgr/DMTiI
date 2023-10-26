@@ -3,7 +3,7 @@ project(Lib)
 add_library(
     num_lib
     num.cpp
-    num.h
+    num.h tests_num.h
 )
 target_include_directories(
     num_lib PUBLIC

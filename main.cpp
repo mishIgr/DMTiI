@@ -1,11 +1,10 @@
-#include "lib/num.h"
+#include "lib.h"
 #include <iostream>
-#include <string>
 
 int main() {
-    Num a("1");
-    Num b("-10000");
-    // b = a;
-    std::cout << a + b;
+    tests_u_num();
+    tests_num();
+    RatFraction a("1/2");
+    
     return 0;
 }
